@@ -1,0 +1,542 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #ececec; /* Blanco humo */
+  color: #1A2E40; /* Gris piedra */
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: #1A2E40; /* Azul medianoche */
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+h3{
+  color: #1A2E40;
+}
+
+p{
+  padding: px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #40E0D0; /* Turquesa */
+}
+
+
+.hero {
+  position: relative;
+  height: 100vh; /* Pantalla completa */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  background-color: #335c83;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* overlay oscuro */
+  z-index: 1;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  font-size: 2rem;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+/* Efecto hover en fondo */
+.hero:hover {
+  transition: background-size 3s ease;
+}
+
+/* Ajuste Weekly */
+#weekly h2 {
+  font-size: 2.4rem;
+  margin-bottom: 3rem; /* más espacio con las cards */
+}
+
+.btnBW{
+  margin-left: 100px;
+  display: inline-block;
+  background: #7bf76b; /* Turquesa */
+  font-weight: bold;
+  padding: 0.2rem 01.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btnBW h1{
+  font-size: 13px;
+  color: #1A2E40;
+}
+
+.btnBW:hover {
+  background: #538bc0; /* Verde suave */
+  transform: translateY(1px);
+}
+
+.btnBW1{
+  margin-left: 100px;
+  display: inline-block;
+  background: #7bf76b; /* Turquesa */
+  font-weight: bold;
+  padding: 0.2rem 01.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.service-description{
+  margin-top: 30px;
+  text-align: center;
+}
+.btnBW1 h1{
+  font-size: 13px;
+  color: #1A2E40;
+}
+
+.btnBW1:hover {
+  background: #538bc0; /* Verde suave */
+  transform: translateY(1px);
+}
+
+
+
+.btn {
+  display: inline-block;
+  background: #7bf76b; /* Turquesa */
+  color: #1A2E40;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #538bc0; /* Verde suave */
+  transform: translateY(-3px);
+}
+
+/* Secciones */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+hr{
+  background-color: #000;
+  border: none;
+  height: 2px;
+}
+.section1{
+  background-color: #1A2E40;
+  text-align: center;
+  padding: 7%;
+}
+
+.section1 h2{
+  font-size: 40px;
+  position: relative;
+  top: -50px;
+  color: #ddd;
+
+}
+
+.section1 p{
+  font-size: 20px;
+  text-align: center;
+  color: #ddd;
+}
+
+.section2{
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/002/015/770/original/white-square-moving-background-free-video.jpg');
+  background-size: 45%;
+}
+
+.section h2 {
+  text-align: center;
+  color: #1A2E40;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-size: 40px;
+
+}
+
+.section3{
+  background-color: #e6e6e6;
+  background: url('');
+  text-align: center;
+  padding: 5%;
+
+}
+
+
+.section3 h2{
+  color: #1A2E40;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-size: 40px;
+  padding: 30px;
+}
+
+.section3 p{
+  color: #1A2E40;
+  padding: 2%;
+}
+
+
+
+.section4{
+  background-color: #FAFAFA;
+  padding: 30px;
+}
+
+.section4 h2{
+  color: #1A2E40;
+  text-align: left;
+}
+
+
+/* Servicios */
+#services {
+  padding: 8rem 6rem;
+  max-width: 1400px;   /* más ancho */
+  margin: auto;        /* centrado */
+}
+
+
+.contact p{
+  color: #1A2E40;
+  font-size: 20px;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* más grandes */
+  gap: 2.5rem; /* más espacio entre cartas */
+  width: 100%;
+}
+
+.service-card {
+  background: #fff;
+  padding: 2.5rem; /* más espacio interno */
+  border-radius: 14px;
+  border: 1px solid #1A2E40;
+  text-align: center;
+  font-size: 1.1rem; /* texto un poco más grande */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.76);
+}
+
+.service-description h3{
+  padding: 20px;
+  font-size: 20px;
+}
+
+.service-description h4{
+  font-size: 15px;
+}
+
+
+
+.btnN{
+  align-items: center;
+  background: #538bc0; /* Turquesa */
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.btnN:hover {
+  background: #25D366; /* Verde suave */
+  transform: translateY(-3px);
+}
+
+
+.booking-form {
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000;
+  margin: 2rem auto;
+}
+
+.booking-form label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  width: fit-content;
+  align-self: center;
+}
+
+
+
+
+
+
+/* Reviews */
+blockquote {
+  background: #e9e7e7;
+  border-left: 5px solid #8feb83;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  font-style: italic;
+  text-align: left;
+}
+
+/* Contact */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact{
+    text-align: center;
+}    
+    
+
+.whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.email {
+  background: #40E0D0;
+  color: #1A2E40;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  color: #1A2E40;
+}
+
+.contact input, 
+.contact textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#formMessage {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #1A2E40;
+  text-align: center;
+  padding: 20px;
+}
+footer p {
+  margin: 5px 0;
+  color: #6E7C7C;
+}
+
+/* Tarjetas de precios */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 10px;
+  
+  
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 50px;
+  padding: 2rem; /* cambie de 90px a 2rem para que no se deforme */
+  text-align: center;
+  font-size: large;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.842);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #1A2E40;
+  background: url('https://us.123rf.com/450wm/nevodka/nevodka1905/nevodka190500041/122268596-art%C3%ADculos-de-limpieza-surtido-de-productos-de-servicio-limpio.jpg?ver=6') no-repeat center/cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subtitle{
+  text-align: center;
+  padding: 30px;
+  margin-top: -50px;
+  font-size: 20px;
+  color: #1A2E40;
+}
+
+
+
+
+
+
+.btnP {
+  align-self: center; /* centrado dentro de la card */
+  background: #7bf76b; 
+  color: #1A2E40;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btnP:hover {
+  background: #538bc0; /* tono un poco más oscuro al pasar */
+  transform: translateY(-3px); /* efecto "flotar" */
+}
+
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.815);
+}
+
+
+
+.section3 h3{
+  color: #1A2E40;
+}
+
+.section3 span{
+  font-size: 40px;
+}
+
+.section3 p{
+  font-size: 30px;
+}
+
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1A2E40;
+  margin: 1rem 0;
+}
+
+.price span {
+  display: block;
+  font-size: 0.9rem;
+  color: #6E7C7C;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.pricing-card ul li {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+
+select#additionalServices {
+  font-family: inherit;
+  background: #fff;
+  border: 1px solid #1A2E40;
+  border-radius: 30px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  color: #1A2E40;
+  transition: box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+select#additionalServices:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(58, 135, 173, 0.5);
+}

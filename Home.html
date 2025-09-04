@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProClean Solutions - Cleaning Services in Limerick</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // 👉 Reemplazar con tu Public Key de EmailJS
+    })();
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">✨ ProClean Solutions ✨</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        
+        <a href="book-now.html" class="btnBW">
+          <h1>📅 Boock Now</h1>
+        </a>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h1> Professional House Cleaning Services in Limerick </h1>
+    <p>Reliable, detailed, and affordable cleaning for your home and office.</p>
+    <a href="#services" class="btn">👉 Book Your Cleaning Today</a>
+  </section>
+
+  <!-- About Us -->
+  <section id="about"class="section1">
+    <h2 class=> About Us</h2>
+    <p>
+      At <strong>ProClean Solutions</strong>, we make your home shine. With experience in cleaning and a strong commitment to quality, we offer reliable and thorough cleaning services in Limerick and surrounding areas.
+      Every home is different, so we tailor our services to what you need. Our mission: to give you a spotless, fresh, and cozy space while saving you time and stress.
+      It’s not just about cleaning it’s about making your life easier. Whether it’s a quick tidy-up or a deep clean, we’re here to help you enjoy your home without the hassle. 
+    </p>
+    <p>
+    </p>
+  </section>
+<hr>    
+
+  <section class="section2" id="services-booking">
+    <div class="services-booking-grid">
+      
+      <!-- Services -->
+      <section id="services" class="section services">
+        <h2> Our Services</h2>
+        <div class="service-list">
+          <!-- FULL HOUSE DEEP CLEAN -->
+          <div class="service-card">
+            <h3>🏠 Full House Deep Clean</h3>
+            <p>Thorough cleaning for the entire home. Ideal for seasonal refresh or move-in/out.</p>
+            <a href="deep-clean.html" class="btn">View Packages</a>
+          </div>
+
+          <!-- WEEKLY / BI-WEEKLY -->
+          <div class="service-card">
+            <h3>📅 Weekly / Bi-Weekly Packages</h3>
+            <p>Maintain your home clean and fresh with regular cleaning schedules.</p>
+            <a href="weekly.html" class="btn">View Packages</a>
+          </div>
+        </div>
+        <!-- Additional Services Dropdown -->
+        <div style="text-align: center; margin-top: 3rem;">
+          <h3 style="color: #1A2E40; margin-bottom: 1rem;">🧼 Additional Services</h3>
+
+          <select id="additionalServices" name="additionalServices"
+            style="padding: 0.8rem 1.2rem; border-radius: 30px; border: 1px solid #1A2E40; font-size: 1rem; margin-bottom: 1rem;">
+            <option value="">Select a service</option>
+            <option value="Inside Oven Cleaning (€25)">Inside Oven Cleaning (€25)</option>
+            <option value="Outside Windows Cleaning (€5/window)">Outside Windows Cleaning (€5/window)</option>
+            <option value="Inside Kitchen Cabinets (€20)">Inside Kitchen Cabinets (€20)</option>
+            <option value="Deep Bathroom Cleaning (€30)">Deep Bathroom Cleaning (€30)</option>
+          </select>
+
+          <br>
+
+          <button id="additionalServiceBtn" class="btnN">Select Service</button>
+        </div>
+      </section>
+
+  <!-- Pricing -->
+<section id="pricing" class="section3">
+  <h2>Our Pricing</h2>
+  <p class="subtitle">Choose the plan that best suits your home</p>
+  <div class="pricing-cards">
+
+    <!-- Plan 1 -->
+    <div class="pricing-card">
+      <h3>Routine Clean</h3>
+      <p>3.5 Hours Weekly Clean</p>
+      <div class="price">€80 <span>4 Hours</span></div>
+      <ul>
+        <li>Empty Trash Can(s)</li>
+        <li>Sweep & Mop Floors</li>
+        <li>Clean Interior Glass</li>
+        <li>Vacuum Couch & Chairs</li>
+        <li>Interior Window Cleaning</li>
+      </ul>
+      <form class="weeklyForm">
+        <input type="hidden" name="weekly" value="Weekly Cleaning - €100 (4 Hours)">
+        <button type="submit" class="btnP">Select</button>
+      </form>
+    </div>
+
+    <!-- Plan 2 -->
+    <div class="pricing-card highlight">
+      <h3>Routine Clean</h3>
+      <p>4.5 Bi-Weekly (Fortnightly) Clean</p>
+      <div class="price">€90 <span>4.5 Hours</span></div>
+      <ul>
+        <li>Empty Trash Can(s)</li>
+        <li>Sweep & Mop Floors</li>
+        <li>Clean Interior Glass</li>
+        <li>Vacuum Couch & Chairs</li>
+        <li>Interior Window Cleaning</li>
+      </ul>
+      <form class="weeklyForm">
+        <input type="hidden" name="weekly" value="Bi-Weekly Cleaning - €90 (4.5 Hours)">
+        <button type="submit" class="btnP">Select</button>
+      </form>
+    </div>
+
+    <!-- Plan 3 -->
+    <div class="pricing-card">
+      <h3>Routine Clean</h3>
+      <p>5 Monthly Clean</p>
+      <div class="price">€100 <span>5 Hours</span></div>
+      <ul>
+        <li>Empty Trash Can(s)</li>
+        <li>Sweep & Mop Floors</li>
+        <li>Clean Interior Glass</li>
+        <li>Vacuum Couch & Chairs</li>
+        <li>Interior Window Cleaning</li>
+      </ul>
+      <form class="weeklyForm">
+        <input type="hidden" name="weekly" value="Monthly Cleaning - €80 (5 Hours)">
+        <button type="submit" class="btnP">Select</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <h2>📞 Contact Us</h2>
+    <p>📍 Based in Limerick, serving all surrounding areas</p>
+    <p>📞 Phone: +353 (83) 419 7389
+</p>
+    <div class="contact-links">
+      <a class="btn whatsapp" href="https://wa.me/353834197389" target="_blank">WhatsApp</a>
+      <a class="btn email" href="mailto:rominachavez.friz@gmail.com">Email</a>
+    </div>
+
+    <form id="contactForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required pattern="^[0-9+ ]+$">
+      
+      <label for="service">Service Requested</label>
+      <input type="text" id="service" name="service" readonly>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="section4">
+    <h2>⭐ Customer Reviews</h2>
+    <blockquote>
+      “ProClean Solutions did an amazing job in my apartment – everything was spotless! Highly recommended.”  
+      <span>– Sarah, Limerick</span>
+    </blockquote>
+    <blockquote>
+      “Very reliable and professional. Great attention to detail.”  
+      <span>– John, Castletroy</span>
+    </blockquote>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ProClean Solutions - All rights reserved.</p>
+  </footer>
+
+  <script src="validaciones.js"></script>
+</body>
+</html>

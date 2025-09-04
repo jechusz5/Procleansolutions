@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full House Deep Cleaning - ProClean Solutions</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">✨ ProClean Solutions ✨</div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="weekly.html">Weekly / Bi-Weekly</a></li>
+
+                
+        <a href="book-now.html" class="btnBW1">
+          <h1>📅 Boock Now</h1>
+        </a>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section3">
+    <h2>🏡 Full House Deep Cleaning</h2>
+    <p>Select type of order from the list:</p>
+    <form class="deepCleanForm">
+      <label><input type="radio" name="deepClean" value="1 Bedroom - €121.5"> 1-Bedroom Apartment/House - €137.50 Estimated time (5 hours) - (With two cleaners, the job is completed in approx. 2.5 hours)</label><br>
+      <label><input type="radio" name="deepClean" value="2 Bedrooms - €145.8"> 2-Bedroom Apartment/House - €165.00 Estimated time (6 hours) - (With two cleaners, the job is completed in approx. 3 hours)</label><br>
+      <label><input type="radio" name="deepClean" value="3 Bedrooms - €194.4"> 3-Bedroom Apartment/House - €220.00 Estimated time (8 hours) - (With two cleaners, the job is completed in approx. 4 hours)</label><br>
+      <label><input type="radio" name="deepClean" value="4 Bedrooms - €243"> 4-bedroom apartment/house - €243.00 Estimated time (10 hours) - (With two cleaners, the job is completed in approx. 5 hours)</label><br>
+      <label><input type="radio" name="deepClean" value="5 Bedrooms - €291.6"> 5+ Bedroom Apartment/House - €330.00 Estimated time (12 hours) - (With two cleaners, the job is completed in approx. 6 hours)</label><br>
+      <label><input type="radio" name="deepClean" value="5+ Bedrooms - €340.2"> Large 5+ Bedroom Apartment/House - €385.00 Estimated time (14 hours) - (With two cleaners, the job is completed in approx. 7 hours)</label><br>
+      <button type="submit" class="btn">👉 Book This Service</button>
+    </form>
+
+    <div class="service-description">
+      <h3>Deep Cleaning includes:</h3>
+      <ul>
+        <h4>Kitchen: thorough cleaning of countertops and sink, detailed scrubbing of oven, stovetop, and fridge (exterior), wiping of cabinet exteriors, and floor cleaning.
+           <h4>Bathroom: sanitizing all surfaces, polishing mirrors and floors, and deep scrubbing of shower, bathtub, and sink.</h4>
+            <h4>Bedrooms & living areas: general tidying, vacuuming, surface cleaning, and bed linen change if required.
+            Extra details: wiping of skirting boards, doors, and inside windows.</h4>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>📞 Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required pattern="^[0-9+ ]+$">
+      <label for="service">Service Requested</label>
+      <input type="text" id="service" name="service" readonly>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 ProClean Solutions - All rights reserved.</p>
+  </footer>
+
+  <script src="validaciones.js"></script>
+</body>
+</html>
