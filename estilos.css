@@ -33,17 +33,16 @@ p{
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo a la izquierda, links a la derecha */
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background-color: #0e2a47; /* tu azul oscuro */
 }
 
 .logo {
+  font-size: 1.2rem;
   font-weight: bold;
-  position: relative;
-  margin-right: 50px;
+  color: white;
 }
 
 .nav-links {
@@ -67,7 +66,7 @@ p{
   color: #40E0D0; /* Turquesa */
 }
 
-/* Hero */
+
 .hero {
   position: relative;
   height: 100vh; /* Pantalla completa */
@@ -121,9 +120,9 @@ p{
 .btnBW{
   margin-left: 100px;
   display: inline-block;
-  background: #7bf76b;
+  background: #7bf76b; /* Turquesa */
   font-weight: bold;
-  padding: 0.2rem 1.5rem;
+  padding: 0.2rem 01.5rem;
   border-radius: 30px;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -135,16 +134,16 @@ p{
 }
 
 .btnBW:hover {
-  background: #538bc0;
+  background: #538bc0; /* Verde suave */
   transform: translateY(1px);
 }
 
 .btnBW1{
   margin-left: 100px;
   display: inline-block;
-  background: #7bf76b;
+  background: #7bf76b; /* Turquesa */
   font-weight: bold;
-  padding: 0.2rem 1.5rem;
+  padding: 0.2rem 01.5rem;
   border-radius: 30px;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -154,20 +153,21 @@ p{
   margin-top: 30px;
   text-align: center;
 }
-
 .btnBW1 h1{
   font-size: 13px;
   color: #1A2E40;
 }
 
 .btnBW1:hover {
-  background: #538bc0;
+  background: #538bc0; /* Verde suave */
   transform: translateY(1px);
 }
 
+
+
 .btn {
   display: inline-block;
-  background: #7bf76b;
+  background: #7bf76b; /* Turquesa */
   color: #1A2E40;
   font-weight: bold;
   padding: 0.8rem 1.5rem;
@@ -178,7 +178,7 @@ p{
 }
 
 .btn:hover {
-  background: #538bc0;
+  background: #538bc0; /* Verde suave */
   transform: translateY(-3px);
 }
 
@@ -205,6 +205,7 @@ hr{
   position: relative;
   top: -50px;
   color: #ddd;
+
 }
 
 .section1 p{
@@ -222,15 +223,20 @@ hr{
   text-align: center;
   color: #1A2E40;
   margin-bottom: 2rem;
-  font-size: 40px;
+  font-size: 2rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-size: 40px;
+
 }
 
 .section3{
   background-color: #e6e6e6;
+  background: url('');
   text-align: center;
   padding: 5%;
+
 }
+
 
 .section3 h2{
   color: #1A2E40;
@@ -244,6 +250,8 @@ hr{
   padding: 2%;
 }
 
+
+
 .section4{
   background-color: #FAFAFA;
   padding: 30px;
@@ -254,12 +262,14 @@ hr{
   text-align: left;
 }
 
+
 /* Servicios */
 #services {
   padding: 8rem 6rem;
-  max-width: 1400px;
-  margin: auto;
+  max-width: 1400px;   /* más ancho */
+  margin: auto;        /* centrado */
 }
+
 
 .contact p{
   color: #1A2E40;
@@ -268,18 +278,18 @@ hr{
 
 .service-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* más grandes */
+  gap: 2.5rem; /* más espacio entre cartas */
   width: 100%;
 }
 
 .service-card {
   background: #fff;
-  padding: 2.5rem;
+  padding: 2.5rem; /* más espacio interno */
   border-radius: 14px;
   border: 1px solid #1A2E40;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* texto un poco más grande */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -297,9 +307,11 @@ hr{
   font-size: 15px;
 }
 
+
+
 .btnN{
   align-items: center;
-  background: #538bc0;
+  background: #538bc0; /* Turquesa */
   color: #ffffff;
   font-weight: bold;
   padding: 0.8rem 1.5rem;
@@ -311,9 +323,10 @@ hr{
 }
 
 .btnN:hover {
-  background: #25D366;
+  background: #25D366; /* Verde suave */
   transform: translateY(-3px);
 }
+
 
 .booking-form {
   background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
@@ -347,6 +360,11 @@ hr{
   align-self: center;
 }
 
+
+
+
+
+
 /* Reviews */
 blockquote {
   background: #e9e7e7;
@@ -367,8 +385,9 @@ blockquote {
 }
 
 .contact{
-  text-align: center;
-}
+    text-align: center;
+}    
+    
 
 .whatsapp {
   background: #25D366;
@@ -417,18 +436,21 @@ footer p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 10px;
+  
+  
 }
 
 .pricing-card {
   background: #fff;
   border-radius: 50px;
-  padding: 2rem;
+  padding: 2rem; /* cambie de 90px a 2rem para que no se deforme */
   text-align: center;
   font-size: large;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.842);
   transition: transform 0.3s, box-shadow 0.3s;
   border: 2px solid #1A2E40;
   background: url('https://us.123rf.com/450wm/nevodka/nevodka1905/nevodka190500041/122268596-art%C3%ADculos-de-limpieza-surtido-de-productos-de-servicio-limpio.jpg?ver=6') no-repeat center/cover;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -442,9 +464,14 @@ footer p {
   color: #1A2E40;
 }
 
+
+
+
+
+
 .btnP {
-  align-self: center;
-  background: #7bf76b;
+  align-self: center; /* centrado dentro de la card */
+  background: #7bf76b; 
   color: #1A2E40;
   font-weight: bold;
   padding: 1rem 2rem;
@@ -455,14 +482,17 @@ footer p {
 }
 
 .btnP:hover {
-  background: #538bc0;
-  transform: translateY(-3px);
+  background: #538bc0; /* tono un poco más oscuro al pasar */
+  transform: translateY(-3px); /* efecto "flotar" */
 }
+
 
 .pricing-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.815);
 }
+
+
 
 .section3 h3{
   color: #1A2E40;
@@ -475,6 +505,7 @@ footer p {
 .section3 p{
   font-size: 30px;
 }
+
 
 .price {
   font-size: 2rem;
@@ -499,6 +530,7 @@ footer p {
   color: #333;
 }
 
+
 select#additionalServices {
   font-family: inherit;
   background: #fff;
@@ -516,125 +548,4 @@ select#additionalServices:focus {
   box-shadow: 0 0 8px rgba(58, 135, 173, 0.5);
 }
 
-/* ====== ESTILOS RESPONSIVE ====== */
-@media (max-width: 1024px) {
-  body {
-    font-size: 16px;
-    line-height: 1.5;
-  }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.3rem;
-  }
-
-  .section {
-    padding: 2rem 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-    padding-top: 1rem;
-  }
-
-  .nav-links li {
-    white-space: nowrap;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-    padding: 0.3rem 0.6rem;
-  }
-
-  /* Hero */
-  .hero {
-    height: auto;
-    padding: 5rem 1.5rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  /* Servicios */
-  .service-list {
-    grid-template-columns: 1fr;
-  }
-
-  /* Pricing cards */
-  .pricing-cards {
-    grid-template-columns: 1fr;
-  }
-
-  /* Booking form */
-  .booking-form {
-    max-width: 90%;
-  }
-
-  /* Contact */
-  .contact-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Navbar */
-  .logo {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .nav-links a {
-    display: block;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  /* Hero */
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-  }
-
-  /* Cards */
-  .service-card, .pricing-card {
-    padding: 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  /* Footer */
-  footer p {
-    font-size: 0.8rem;
-  }
-}
