@@ -17,6 +17,10 @@
   <header>
     <nav class="navbar">
       <div class="logo">✨ ProClean Solutions ✨</div>
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
+  
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
@@ -163,7 +167,7 @@
     <h2>📞 Contact Us</h2>
     <p>📍 Based in Limerick, serving all surrounding areas</p>
     <p>📞 Phone: +353 (83) 419 7389
-</p>
+    </p>
     <div class="contact-links">
       <a class="btn whatsapp" href="https://wa.me/353834197389" target="_blank">WhatsApp</a>
       <a class="btn email" href="mailto:rominachavez.friz@gmail.com">Email</a>
@@ -206,6 +210,17 @@
   <footer>
     <p>© 2025 ProClean Solutions - All rights reserved.</p>
   </footer>
+
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  </script>
+
+
 
   <script src="validaciones.js"></script>
 </body>
