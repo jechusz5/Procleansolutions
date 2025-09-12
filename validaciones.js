@@ -144,6 +144,52 @@ if (bookingForm) {
   });
 }
 
+
+
+// Donation Form con EmailJS
+const donationForm = document.getElementById("donationForm");
+if (donationForm) {
+  donationForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const donorName = donationForm.donorName.value.trim();
+    const donorEmail = donationForm.donorEmail.value.trim();
+    const donationAmount = donationForm.donationAmount.value.trim();
+    const donationMessage = document.getElementById("donationMessage");
+
+    if (!donorName || !donorEmail || !donationAmount) {
+      donationMessage.textContent = "⚠️ Please complete all fields.";
+      donationMessage.style.color = "red";
+      return;
+    }
+
+    // Validación de email
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(donorEmail)) {
+      donationMessage.textContent = "⚠️ Invalid email address.";
+      donationMessage.style.color = "red";
+      return;
+    }
+
+    // Enviar con EmailJS
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+      donor_name: donorName,
+      donor_email: donorEmail,
+      donation_amount: donationAmount
+    }).then(() => {
+      donationMessage.textContent = `✅ Thank you, ${donorName}! Your donation of €${donationAmount} has been registered.`;
+      donationMessage.style.color = "green";
+      donationForm.reset();
+    }).catch(() => {
+      donationMessage.textContent = "❌ Error sending donation. Please try again later.";
+      donationMessage.style.color = "red";
+    });
+  });
+}
+
+
+
+
+
 /* -------------------------------
    ANIMACIONES DEL HERO (HOME)
 ---------------------------------*/
@@ -189,3 +235,65 @@ if (additionalServiceBtn) {
 }
 
 
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
+
+
+
+// Gift Card Form
+const giftCardForm = document.getElementById("giftCardForm");
+if (giftCardForm) {
+  giftCardForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const recipientName = giftCardForm.giftName.value.trim();
+    const recipientEmail = giftCardForm.giftEmail.value.trim();
+    const giftService = giftCardForm.giftService.value.trim();
+    const giftMessage = giftCardForm.giftMessage.value.trim();
+    const giftCardMessage = document.getElementById("giftCardMessage");
+
+    if (!recipientName || !recipientEmail || !giftService) {
+      giftCardMessage.textContent = "⚠️ Please complete all required fields.";
+      giftCardMessage.style.color = "red";
+      return;
+    }
+
+    // Enviar con EmailJS
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+      recipient_name: recipientName,
+      recipient_email: recipientEmail,
+      service: giftService,
+      message: giftMessage
+    }).then(() => {
+      giftCardMessage.textContent = `✅ Gift card for ${giftService} sent successfully to ${recipientName}!`;
+      giftCardMessage.style.color = "green";
+      giftCardForm.reset();
+    }).catch(() => {
+      giftCardMessage.textContent = "❌ Error sending gift card. Please try again later.";
+      giftCardMessage.style.color = "red";
+    });
+  });
+}
+
+
+// Seleccionar servicio desde tabla de Deep Cleaning
+const deepTableBtns = document.querySelectorAll(".select-service-btn");
+deepTableBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const serviceInput = document.getElementById("service");
+    serviceInput.value = btn.dataset.service;
+
+    // Scroll al formulario de contacto
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});

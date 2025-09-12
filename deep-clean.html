@@ -16,41 +16,89 @@
   <header>
     <nav class="navbar">
       <div class="logo">✨ ProClean Solutions ✨</div>
-      <ul class="nav-links">
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="weekly.html">Weekly / Bi-Weekly</a></li>
-
-                
-        <a href="book-now.html" class="btnBW1">
-          <h1>📅 Boock Now</h1>
-        </a>
       </ul>
+      
+      <a href="book-now.html" class="btnBW1">📅 Boock Now</a>
+
     </nav>
   </header>
 
   <section class="section3">
     <h2>🏡 Full House Deep Cleaning</h2>
-    <p>Select type of order from the list:</p>
-    <form class="deepCleanForm">
-      <label><input type="radio" name="deepClean" value="1 Bedroom - €121.5"> 1-Bedroom Apartment/House - €137.50 Estimated time (5 hours) - (With two cleaners, the job is completed in approx. 2.5 hours)</label><br>
-      <label><input type="radio" name="deepClean" value="2 Bedrooms - €145.8"> 2-Bedroom Apartment/House - €165.00 Estimated time (6 hours) - (With two cleaners, the job is completed in approx. 3 hours)</label><br>
-      <label><input type="radio" name="deepClean" value="3 Bedrooms - €194.4"> 3-Bedroom Apartment/House - €220.00 Estimated time (8 hours) - (With two cleaners, the job is completed in approx. 4 hours)</label><br>
-      <label><input type="radio" name="deepClean" value="4 Bedrooms - €243"> 4-bedroom apartment/house - €243.00 Estimated time (10 hours) - (With two cleaners, the job is completed in approx. 5 hours)</label><br>
-      <label><input type="radio" name="deepClean" value="5 Bedrooms - €291.6"> 5+ Bedroom Apartment/House - €330.00 Estimated time (12 hours) - (With two cleaners, the job is completed in approx. 6 hours)</label><br>
-      <label><input type="radio" name="deepClean" value="5+ Bedrooms - €340.2"> Large 5+ Bedroom Apartment/House - €385.00 Estimated time (14 hours) - (With two cleaners, the job is completed in approx. 7 hours)</label><br>
-      <button type="submit" class="btn">👉 Book This Service</button>
-    </form>
+    <p>Select your service from the list below:</p>
+
+    <table class="deep-clean-table">
+      <thead>
+        <tr>
+          <th>Num Bedrooms</th>
+          <th>Estimated Time</th>
+          <th>Time with 2 cleaners</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>5 hours</td>
+          <td>2.5 hours</td>
+          <td>€138 </td>
+          <td><button class="select-service-btn" data-service="1 Bedroom - €138">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>6 hours</td>
+          <td>3 hours</td>
+          <td>€165 </td>
+          <td><button class="select-service-btn" data-service="2 Bedrooms - €165">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>8 hours</td>
+          <td>4 hours</td>
+          <td>€220 </td>
+          <td><button class="select-service-btn" data-service="3 Bedrooms - €220">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>10 hours</td>
+          <td>5 hours</td>
+          <td>€243 </td>
+          <td><button class="select-service-btn" data-service="4 Bedrooms - €243">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>12 hours</td>
+          <td>6 hours</td>
+          <td>€330 </td>
+          <td><button class="select-service-btn" data-service="5 Bedrooms - €330">Select</button></td>
+        </tr>
+        <tr>
+          <td>5+</td>
+          <td>14 hours</td>
+          <td>7 hours</td>
+          <td>€385 </td>
+          <td><button class="select-service-btn" data-service="5+ Bedrooms - €385">Select</button></td>
+        </tr>
+      </tbody>
+    </table>
 
     <div class="service-description">
       <h3>Deep Cleaning includes:</h3>
       <ul>
-        <h4>Kitchen: thorough cleaning of countertops and sink, detailed scrubbing of oven, stovetop, and fridge (exterior), wiping of cabinet exteriors, and floor cleaning.
-           <h4>Bathroom: sanitizing all surfaces, polishing mirrors and floors, and deep scrubbing of shower, bathtub, and sink.</h4>
-            <h4>Bedrooms & living areas: general tidying, vacuuming, surface cleaning, and bed linen change if required.
-            Extra details: wiping of skirting boards, doors, and inside windows.</h4>
+        <li>Kitchen: countertops, sink, oven, stovetop, fridge exterior, cabinet exteriors, and floor.</li>
+        <li>Bathroom: all surfaces, mirrors, floors, shower, bathtub, and sink.</li>
+        <li>Bedrooms & living areas: tidying, vacuuming, surface cleaning, bed linen change if required, skirting boards, doors, and inside windows.</li>
       </ul>
     </div>
   </section>
+
 
   <section id="contact" class="section contact">
     <h2>📞 Contact Us</h2>

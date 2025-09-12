@@ -40,12 +40,11 @@ p{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #0e2a47;
   position: relative;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: bold;
   color: white;
 }
@@ -109,12 +108,6 @@ p{
 }
 
 
-
-
-
-
-
-
 .hero {
   position: relative;
   height: 100vh; /* Pantalla completa */
@@ -144,9 +137,10 @@ p{
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  
 }
 
 .hero p {
@@ -242,28 +236,62 @@ hr{
   border: none;
   height: 2px;
 }
-.section1{
+
+/* --- ABOUT US --- */
+.section1 {
   background-color: #1A2E40;
   text-align: center;
   padding: 7%;
 }
 
-.section1 h2{
+.section1 h2 {
   font-size: 40px;
-  position: relative;
-  top: -50px;
   color: #ddd;
-
+  margin-bottom: 20px;
 }
 
-.section1 p{
-  font-size: 20px;
-  text-align: center;
+.section1 p {
+  font-size: 18px;
   color: #ddd;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
+
+.section1 h3 {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 25px 0 15px 0;
+}
+
+.about-values {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 25px auto;
+  max-width: 700px;
+  text-align: left; /* que alinee en bloque */
+}
+
+.about-values li {
+  display: flex;              /* usamos flexbox */
+  align-items: center;        /* centramos verticalmente */
+  justify-content: center;    /* que todo el contenido quede centrado en el bloque */
+  font-size: 18px;
+  color: #ddd;
+  margin: 10px 0;
+  gap: 10px;                  /* espacio entre el tick y el texto */
+}
+
+.about-values li::before {
+  content: "✔️"; /* icono para cada valor */
+  font-size: 18px;
+  flex-shrink: 0;             /* que no se encoja */
+}
+
+
+
+
 
 .section2{
-  background: url('https://static.vecteezy.com/system/resources/thumbnails/002/015/770/original/white-square-moving-background-free-video.jpg');
   background-size: 45%;
 }
 
@@ -326,10 +354,12 @@ hr{
 
 .service-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* más grandes */
-  gap: 2.5rem; /* más espacio entre cartas */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* antes 400px */
+  gap: 2rem;
   width: 100%;
+  padding: 1rem;
 }
+
 
 .service-card {
   background: #fff;
@@ -597,3 +627,365 @@ select#additionalServices:focus {
 }
 
 
+/* --- DONATION PROGRAM --- */
+.donation-section {
+  background-color: #1A2E40;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.donation-section h2 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.donation-section h3 {
+  font-size: 22px;
+  color: #fff;
+  margin: 25px 0 15px 0;
+}
+
+.donation-section p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: center; /* centramos párrafos */
+}
+
+/* ✅ Lista estilo About Us */
+.donation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 25px auto;
+  max-width: 700px;
+  text-align: left; /* alineamos la lista en bloque */
+}
+
+.donation-list li {
+  display: flex;              /* usamos flexbox */
+  align-items: center;        /* centramos verticalmente */
+  justify-content: center;    /* centramos el bloque dentro */
+  font-size: 18px;
+  color: #fff;
+  margin: 10px 0;
+  gap: 10px;                  /* espacio entre tick y texto */
+}
+
+.donation-list li::before {
+  content: "✔️"; /* icono al inicio */
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+
+
+/* --- DONATION FORM --- */
+.donation-form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 550px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.donation-form-container h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #1A2E40;
+}
+
+#donationForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1A2E40;
+}
+
+#donationForm input,
+#donationForm select,
+#donationForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+#donationForm input:focus,
+#donationForm select:focus,
+#donationForm textarea:focus {
+  outline: none;
+  border: 1px solid #538bc0;
+  box-shadow: 0 0 8px rgba(83, 139, 192, 0.4);
+  background: #fff;
+}
+
+#donationForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.donate-btn {
+  background: #7bf76b;
+  color: #1A2E40;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.donate-btn:hover {
+  background: #538bc0;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+#donationMessage {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+/* -------------------------------
+   Gift Cards Section
+---------------------------------*/
+.giftcards {
+  padding: 4rem 2rem;
+  background-color: #1A2E40;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.giftcards h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.giftcards p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.giftcards-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  cursor: default; /* Evita que se tome como link */
+}
+
+
+/* List with ticks */
+.giftcards ul.gift-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.giftcards ul.gift-list li {
+  position: relative;
+  padding-left: 2rem; /* espacio para tick */
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.giftcards ul.gift-list li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  color: #2e7d32;
+}
+
+/* Grid layout for images + form */
+.giftcards-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.giftcards-img,
+.giftcards-form {
+  flex: 1 1 400px;
+}
+
+/* Images styling */
+.giftcards-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Hover effect */
+.giftcards-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Form styling */
+.giftcards-form {
+  text-align: left;
+  background-color: #e6e6e6;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.giftcards-form h3 {
+  margin-bottom: 1rem;
+  color: #1A2E40;
+  text-align: center;
+}
+
+.giftcards-form label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.giftcards-form input,
+.giftcards-form select,
+.giftcards-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.giftcards-form button {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.giftcards-form button:hover {
+  background-color: #1A2E40;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .giftcards-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .giftcards-img img {
+    height: 250px;
+  }
+}
+
+
+
+
+/* --- Tabla Deep Cleaning --- */
+.deep-clean-table {
+  margin: 0 auto; /* centra la tabla */
+  border-collapse: collapse; /* une bordes */
+  width: 80%; /* opcional: que no ocupe toda la pantalla */
+}
+
+.deep-clean-table th,
+.deep-clean-table td {
+  border: 1px solid #1A2E40; /* líneas visibles */
+  padding: 12px;
+  text-align: center;
+}
+
+.deep-clean-table th {
+  background-color: #1A2E40;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* --- Lista sin puntos y en negrita --- */
+.service-description ul {
+  list-style: none; /* quita los puntos */
+  padding: 0;
+  margin: 0;
+  font-weight: bold; /* texto en negrita */
+}
+
+.service-description li {
+  margin: 8px 0;
+}
+
+.terms {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.7;
+  color: #1A2E40;
+}
+
+.terms h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1A2E40;
+}
+
+.terms h3 {
+  margin-top: 1.5rem;
+  color: #6E7C7C;
+}
+
+
+
+.select-service-btn{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #538bc0;
+  color: rgb(255, 255, 255);
+
+}
+
+.select-service-btn:hover{
+  background: #1A2E40;
+  color: #fff;
+  transform: translateY(-2px);
+  transition: background 0.3s ease, transform 0.2s ease;
+
+}
