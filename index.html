@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("YOUR_PUBLIC_KEY"); // 👉 Reemplazar con tu Public Key de EmailJS
+      emailjs.init("DJ1C0_sPpeua2_xJr"); // 👉 Reemplazar con tu Public Key de EmailJS
     })();
   </script>
 </head>
@@ -135,7 +135,7 @@
         <li>Interior Window Cleaning</li>
       </ul>
       <form class="weeklyForm">
-        <input type="hidden" name="weekly" value="Weekly Cleaning - €100 (4 Hours)">
+        <input type="hidden" name="weekly" value="Weekly Cleaning - €80 (4 Hours)">
         <button type="submit" class="btnP">Select</button>
       </form>
     </div>
@@ -171,7 +171,7 @@
         <li>Interior Window Cleaning</li>
       </ul>
       <form class="weeklyForm">
-        <input type="hidden" name="weekly" value="Monthly Cleaning - €80 (5 Hours)">
+        <input type="hidden" name="weekly" value="Monthly Cleaning - €100 (5 Hours)">
         <button type="submit" class="btnP">Select</button>
       </form>
     </div>
@@ -237,6 +237,10 @@
         <label for="giftDate">Preferred Delivery Date</label>
         <input type="date" id="giftDate" name="date" required>
 
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" name="time" required>
+
+
         <label for="giftMessage">Message for the Recipient</label>
         <textarea id="giftMessage" name="message" rows="4"></textarea>
 
@@ -260,7 +264,6 @@
     </p>
     <div class="contact-links">
       <a class="btn whatsapp" href="https://wa.me/353834197389" target="_blank">WhatsApp</a>
-      <a class="btn email" href="mailto:rominachavez.friz@gmail.com">Email</a>
     </div>
 
     <form id="contactForm">
@@ -315,11 +318,27 @@
       <form id="donationForm">
         <input type="text" name="donorName" placeholder="Your Name" required>
         <input type="email" name="donorEmail" placeholder="Your Email" required>
-        <input type="number" name="donationAmount" placeholder="Donation Amount (€)" required min="1">
-        <button type="submit" class="donate-btn">💙 Donate Now</button>
+
+    <div id="donate-button-container">
+      <div id="donate-button"></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+          PayPal.Donation.Button({
+          env:'production',
+          hosted_button_id:'UBVTJWXKXEAVW',
+          image: {
+          src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+          alt:'Donate with PayPal button',
+          title:'PayPal - The safer, easier way to pay online!',
+          }
+          }).render('#donate-button');
+        </script>
+      </div>
+
       </form>
       <p id="donationMessage"></p>
     </div>
+      
 </section>
 
 
@@ -340,41 +359,41 @@
 
 
 <!-- Terms and Conditions -->
-<section id="terms" class="section terms">
-  <h2>📑 Terms and Conditions – ProClean Solutions</h2>
-  <p><em>Last updated: 05/09/2025</em></p>
+  <section id="terms" class="section terms">
+      <h2>📑 Terms and Conditions – ProClean Solutions</h2>
+      <p><em>Last updated: 05/09/2025</em></p>
 
-  <h3>1. Introduction</h3>
-  <p>These Terms and Conditions govern the use of cleaning services offered by ProClean Solutions in Ireland. By contracting our services, you agree to the conditions described below.</p>
+      <h3>1. Introduction</h3>
+      <p>These Terms and Conditions govern the use of cleaning services offered by ProClean Solutions in Ireland. By contracting our services, you agree to the conditions described below.</p>
 
-  <h3>2. Services</h3>
-  <p>Cleaning services will be provided as previously agreed (homes, offices, commercial premises, etc.). Any additional services must be requested in advance and may incur an additional charge. ProClean Solutions reserves the right to refuse services in cases of risk to staff safety or unsuitable conditions.</p>
+      <h3>2. Services</h3>
+      <p>Cleaning services will be provided as previously agreed (homes, offices, commercial premises, etc.). Any additional services must be requested in advance and may incur an additional charge. ProClean Solutions reserves the right to refuse services in cases of risk to staff safety or unsuitable conditions.</p>
 
-  <h3>3. Reservations and Cancellations</h3>
-  <p>To confirm any service, a payment of €20 is required per reservation made. This payment will be deducted from the final price of the service. In the event of cancellation with less than 24 hours' notice, the €20 payment will not be refunded. If the client fails to show up or grant access to the property on the agreed date and time, the full charge for the reserved service will apply.</p>
+      <h3>3. Reservations and Cancellations</h3>
+      <p>To confirm any service, a payment of €20 is required per reservation made. This payment will be deducted from the final price of the service. In the event of cancellation with less than 24 hours' notice, the €20 payment will not be refunded. If the client fails to show up or grant access to the property on the agreed date and time, the full charge for the reserved service will apply.</p>
 
-  <h3>4. Access to the Property</h3>
-  <p>The client is responsible for ensuring secure access to the property on the agreed date and time. ProClean Solutions staff is not responsible for improperly shared keys, codes, or access.</p>
+      <h3>4. Access to the Property</h3>
+      <p>The client is responsible for ensuring secure access to the property on the agreed date and time. ProClean Solutions staff is not responsible for improperly shared keys, codes, or access.</p>
 
-  <h3>5. Payments</h3>
-  <p>In addition to the €20 reservation fee, the remaining balance of the service must be paid at the time of service or as agreed upon in the contract. We accept cash, transfer, or card (as applicable). Prices may be subject to change with prior notice.</p>
+      <h3>5. Payments</h3>
+      <p>In addition to the €20 reservation fee, the remaining balance of the service must be paid at the time of service or as agreed upon in the contract. We accept cash, transfer, or card (as applicable). Prices may be subject to change with prior notice.</p>
 
-  <h3>6. Liability</h3>
-  <p>ProClean Solutions has trained and insured personnel to provide the service. We are not responsible for valuables that have not been previously secured by the client. In the event of damage caused by our staff, this must be reported within 24 hours of the service being provided.</p>
+      <h3>6. Liability</h3>
+      <p>ProClean Solutions has trained and insured personnel to provide the service. We are not responsible for valuables that have not been previously secured by the client. In the event of damage caused by our staff, this must be reported within 24 hours of the service being provided.</p>
 
-  <h3>7. Health and Safety</h3>
-  <p>We use safe and, where possible, environmentally friendly cleaning products. The client must inform us of any special conditions (allergies, delicate surfaces, fragile materials, etc.).</p>
+      <h3>7. Health and Safety</h3>
+      <p>We use safe and, where possible, environmentally friendly cleaning products. The client must inform us of any special conditions (allergies, delicate surfaces, fragile materials, etc.).</p>
 
-  <h3>8. Modifications to the Terms</h3>
-  <p>ProClean Solutions reserves the right to update these Terms and Conditions at any time. Updated versions will be available on our website.</p>
+      <h3>8. Modifications to the Terms</h3>
+      <p>ProClean Solutions reserves the right to update these Terms and Conditions at any time. Updated versions will be available on our website.</p>
 
-  <h3>9. Contact</h3>
-  <p>
-    For questions related to these Terms and Conditions, you can contact us at:<br>
-    📧 <a href="mailto:procleanireland2025@gmail.com">procleanireland2025@gmail.com</a><br>
-    📞 +353 83 419 7389
-  </p>
-</section>
+      <h3>9. Contact</h3>
+      <p>
+        For questions related to these Terms and Conditions, you can contact us at:<br>
+        📧 <a href="mailto:procleanireland2025@gmail.com">procleanireland2025@gmail.com</a><br>
+        📞 +353 83 419 7389
+      </p>
+  </section>
 
 
 

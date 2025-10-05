@@ -723,6 +723,7 @@ select#additionalServices:focus {
   font-size: 16px;
   background: #f9f9f9;
   transition: border 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 #donationForm input:focus,
@@ -732,6 +733,7 @@ select#additionalServices:focus {
   border: 1px solid #538bc0;
   box-shadow: 0 0 8px rgba(83, 139, 192, 0.4);
   background: #fff;
+  text-align: center;
 }
 
 #donationForm textarea {
@@ -739,30 +741,17 @@ select#additionalServices:focus {
   min-height: 100px;
 }
 
-.donate-btn {
-  background: #7bf76b;
-  color: #1A2E40;
-  border: none;
-  padding: 14px;
-  width: 100%;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
 
-.donate-btn:hover {
-  background: #538bc0;
-  color: #fff;
-  transform: translateY(-2px);
-}
 
 #donationMessage {
   margin-top: 20px;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
+}
+
+.donate-button{
+  align-items: center;
 }
 
 
@@ -988,4 +977,26 @@ select#additionalServices:focus {
   transform: translateY(-2px);
   transition: background 0.3s ease, transform 0.2s ease;
 
+}
+
+
+
+/* Contenedor centrado */
+#donate-button-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Botón PayPal siempre visible */
+#donate-button {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.3s, pointer-events 0.3s;
+}
+
+/* Estado deshabilitado (no clickeable) */
+#donate-button.disabled {
+  opacity: 0.5;              /* se ve apagado */
+  pointer-events: none;       /* no permite clics */
+  cursor: not-allowed;        /* cambia cursor */
 }

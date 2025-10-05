@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Enviar con EmailJS
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send("service_ggacurv", "template_1de8ct5", {
       name,
       email,
       phone,
@@ -61,48 +61,92 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Deep Clean forms
-const deepCleanForms = document.querySelectorAll(".deepCleanForm");
-deepCleanForms.forEach(form => {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const selected = form.querySelector("input[name='deepClean']:checked");
-    if (!selected) {
-      alert("⚠️ Please select a deep cleaning package.");
-      return;
-    }
-    const serviceInput = document.getElementById("service");
-    serviceInput.value = selected.value;
+// Full House Deep Cleaning forms
+const deepCleanButtons = document.querySelectorAll(".select-service-btn");
 
-    // Redirigir al contacto
+deepCleanButtons.forEach(button => {
+  button.addEventListener("click", (e) => {
+    const serviceValue = button.dataset.service;
+    const serviceInput = document.getElementById("service");
+    serviceInput.value = serviceValue;
+
+    // Scroll al contacto
     const contactSection = document.getElementById("contact");
-    if (contactSection) {
+    if(contactSection){
       contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Envía el email automáticamente con EmailJS
+    const contactForm = document.getElementById("contactForm");
+    if(contactForm){
+      // Puedes usar valores por defecto para name/email si quieres autocompletar
+      const name = contactForm.querySelector("#name").value || "Cliente ProClean";
+      const email = contactForm.querySelector("#email").value || "cliente@example.com";
+      const phone = contactForm.querySelector("#phone").value || "N/A";
+      const message = `Selected Deep Cleaning Package: ${serviceValue}`;
+
+      emailjs.send("service_ggacurv", "template_1de8ct5", {
+        name,
+        email,
+        phone,
+        service: serviceValue,
+        message
+      }).then(() => {
+        alert("✅ Your selection was sent successfully!");
+      }).catch((err) => {
+        console.error("Error sending email:", err);
+        alert("⚠️ There was an error sending your selection.");
+      });
     }
   });
 });
 
-
 // Weekly / Bi-Weekly forms
 const weeklyForms = document.querySelectorAll(".weeklyForm");
+
 weeklyForms.forEach(form => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const selected = form.querySelector("input[name='weekly']").value;
     if (!selected) {
       alert("⚠️ Please select a package.");
       return;
     }
+
     const serviceInput = document.getElementById("service");
     serviceInput.value = selected;
 
-    // Redirigir al contacto
+    // Scroll al contacto
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
+
+    // Envía el email automáticamente con EmailJS
+    const contactForm = document.getElementById("contactForm");
+    if(contactForm){
+      const name = contactForm.querySelector("#name").value || "Cliente ProClean";
+      const email = contactForm.querySelector("#email").value || "cliente@example.com";
+      const phone = contactForm.querySelector("#phone").value || "N/A";
+      const message = `Selected Weekly/Bi-Weekly Package: ${selected}`;
+
+      emailjs.send("service_ggacurv", "template_1de8ct5", {
+        name,
+        email,
+        phone,
+        service: selected,
+        message
+      }).then(() => {
+        alert("✅ Your selection was sent successfully!");
+      }).catch((err) => {
+        console.error("Error sending email:", err);
+        alert("⚠️ There was an error sending your selection.");
+      });
+    }
   });
 });
+
 
 
 // Booking Form en Home
@@ -124,7 +168,7 @@ if (bookingForm) {
       return;
     }
 
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send("service_ggacurv", "template_1de8ct5", {
       from_name: name,
       from_email: email,
       phone: phone,
@@ -146,7 +190,7 @@ if (bookingForm) {
 
 
 
-// Donation Form con EmailJS
+// Donation Form 
 const donationForm = document.getElementById("donationForm");
 if (donationForm) {
   donationForm.addEventListener("submit", function(e) {
@@ -169,20 +213,6 @@ if (donationForm) {
       donationMessage.style.color = "red";
       return;
     }
-
-    // Enviar con EmailJS
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-      donor_name: donorName,
-      donor_email: donorEmail,
-      donation_amount: donationAmount
-    }).then(() => {
-      donationMessage.textContent = `✅ Thank you, ${donorName}! Your donation of €${donationAmount} has been registered.`;
-      donationMessage.style.color = "green";
-      donationForm.reset();
-    }).catch(() => {
-      donationMessage.textContent = "❌ Error sending donation. Please try again later.";
-      donationMessage.style.color = "red";
-    });
   });
 }
 
@@ -247,40 +277,51 @@ if (menuToggle && navLinks) {
 
 
 
-// Gift Card Form
-const giftCardForm = document.getElementById("giftCardForm");
+// ✅ Gift Card Form
+const giftCardForm = document.getElementById("bookingFormGift"); // corregido el ID
+
 if (giftCardForm) {
   giftCardForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const recipientName = giftCardForm.giftName.value.trim();
-    const recipientEmail = giftCardForm.giftEmail.value.trim();
-    const giftService = giftCardForm.giftService.value.trim();
-    const giftMessage = giftCardForm.giftMessage.value.trim();
-    const giftCardMessage = document.getElementById("giftCardMessage");
+    // Obtener los valores del formulario
+    const recipientName = document.getElementById("giftName").value.trim();
+    const recipientEmail = document.getElementById("giftEmail").value.trim();
+    const giftPhone = document.getElementById("giftPhone").value.trim();
+    const giftService = document.getElementById("giftService").value.trim();
+    const giftDate = document.getElementById("giftDate").value;
+    const giftMessage = document.getElementById("giftMessage").value.trim();
+    const giftBookingMessage = document.getElementById("giftBookingMessage");
 
-    if (!recipientName || !recipientEmail || !giftService) {
-      giftCardMessage.textContent = "⚠️ Please complete all required fields.";
-      giftCardMessage.style.color = "red";
+    // Validar campos obligatorios
+    if (!recipientName || !recipientEmail || !giftPhone || !giftService || !giftDate) {
+      giftBookingMessage.textContent = "⚠️ Please complete all required fields.";
+      giftBookingMessage.style.color = "red";
       return;
     }
 
-    // Enviar con EmailJS
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    // Enviar con EmailJS usando tu nuevo template
+    emailjs.send("service_ggacurv", "template_8r0hsnp", {
       recipient_name: recipientName,
       recipient_email: recipientEmail,
+      phone: giftPhone,
       service: giftService,
+      date: giftDate,
       message: giftMessage
-    }).then(() => {
-      giftCardMessage.textContent = `✅ Gift card for ${giftService} sent successfully to ${recipientName}!`;
-      giftCardMessage.style.color = "green";
+    })
+    .then(() => {
+      giftBookingMessage.textContent = `✅ ${recipientName},  ¡We will respond as soon as possible to schedule your gift card for a service!.`;
+      giftBookingMessage.style.color = "green";
       giftCardForm.reset();
-    }).catch(() => {
-      giftCardMessage.textContent = "❌ Error sending gift card. Please try again later.";
-      giftCardMessage.style.color = "red";
+    })
+    .catch((error) => {
+      console.error("EmailJS error:", error);
+      giftBookingMessage.textContent = "❌ Error sending gift card. Please try again later.";
+      giftBookingMessage.style.color = "red";
     });
   });
 }
+
 
 
 // Seleccionar servicio desde tabla de Deep Cleaning
@@ -295,5 +336,49 @@ deepTableBtns.forEach(btn => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
+  });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const donationForm = document.getElementById("donationForm");
+  const donationMessage = document.getElementById("donationMessage");
+
+  donationForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = donationForm.donorName.value.trim();
+    const email = donationForm.donorEmail.value.trim();
+    const amount = donationForm.donationAmount.value.trim();
+    const method = donationForm.paymentMethod.value; // nuevo campo select
+
+    if (!name || !email || !amount || amount <= 0 || !method) {
+      donationMessage.textContent = "⚠️ Please complete all fields.";
+      donationMessage.style.color = "red";
+      return;
+    }
+
+    donationMessage.textContent = "Redirecting to payment gateway...";
+    donationMessage.style.color = "blue";
+
+    // Simulación de redirección según método
+    let redirectUrl = "";
+
+    if (method === "paypal") {
+      redirectUrl = `https://www.paypal.com/donate?business=TU_CORREO_PAYPAL&amount=${amount}&currency_code=EUR`;
+    } else if (method === "aib") {
+      redirectUrl = `https://onlinebanking.aib.ie/inet/roi/login.htm`; // AIB login
+    } else if (method === "boi") {
+      redirectUrl = `https://www.365online.com/servlet/com.ibm.wps.portletbridgemvc.servlet.PortletBridgeServlet/login`; // Bank of Ireland login
+    } else if (method === "revolut") {
+      redirectUrl = `https://revolut.me/TU_USUARIO/${amount}`;
+    }
+
+    // Redirigir después de un pequeño delay
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 1500);
   });
 });
