@@ -691,6 +691,8 @@ select#additionalServices:focus {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: url('https://media.gettyimages.com/id/1075687942/es/v%C3%ADdeo/blanco-apertura-de-caja-de-regalo-sobre-fondo-rojo-en-resoluci%C3%B3n-de-4-k.jpg?s=640x640&k=20&c=oS_aW6OxSCkZvZOLX4tS1j2T9DDIWxj-Zl1AmDRFlhM=');
+
 }
 
 .donation-form-container:hover {
@@ -702,7 +704,7 @@ select#additionalServices:focus {
   text-align: center;
   margin-bottom: 25px;
   font-size: 26px;
-  color: #1A2E40;
+  color: #fff;
 }
 
 #donationForm label {
@@ -724,6 +726,7 @@ select#additionalServices:focus {
   background: #f9f9f9;
   transition: border 0.3s, box-shadow 0.3s;
   text-align: center;
+  
 }
 
 #donationForm input:focus,
@@ -734,11 +737,13 @@ select#additionalServices:focus {
   box-shadow: 0 0 8px rgba(83, 139, 192, 0.4);
   background: #fff;
   text-align: center;
+  
 }
 
 #donationForm textarea {
   resize: vertical;
   min-height: 100px;
+  
 }
 
 

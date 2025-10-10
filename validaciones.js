@@ -70,33 +70,10 @@ deepCleanButtons.forEach(button => {
     const serviceInput = document.getElementById("service");
     serviceInput.value = serviceValue;
 
-    // Scroll al contacto
+    // ✅ Solo scroll — NO envío de email
     const contactSection = document.getElementById("contact");
     if(contactSection){
       contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-
-    // Envía el email automáticamente con EmailJS
-    const contactForm = document.getElementById("contactForm");
-    if(contactForm){
-      // Puedes usar valores por defecto para name/email si quieres autocompletar
-      const name = contactForm.querySelector("#name").value || "Cliente ProClean";
-      const email = contactForm.querySelector("#email").value || "cliente@example.com";
-      const phone = contactForm.querySelector("#phone").value || "N/A";
-      const message = `Selected Deep Cleaning Package: ${serviceValue}`;
-
-      emailjs.send("service_ggacurv", "template_1de8ct5", {
-        name,
-        email,
-        phone,
-        service: serviceValue,
-        message
-      }).then(() => {
-        alert("✅ Your selection was sent successfully!");
-      }).catch((err) => {
-        console.error("Error sending email:", err);
-        alert("⚠️ There was an error sending your selection.");
-      });
     }
   });
 });
@@ -117,37 +94,13 @@ weeklyForms.forEach(form => {
     const serviceInput = document.getElementById("service");
     serviceInput.value = selected;
 
-    // Scroll al contacto
+    // ✅ Solo scroll — NO envío de email
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
-
-    // Envía el email automáticamente con EmailJS
-    const contactForm = document.getElementById("contactForm");
-    if(contactForm){
-      const name = contactForm.querySelector("#name").value || "Cliente ProClean";
-      const email = contactForm.querySelector("#email").value || "cliente@example.com";
-      const phone = contactForm.querySelector("#phone").value || "N/A";
-      const message = `Selected Weekly/Bi-Weekly Package: ${selected}`;
-
-      emailjs.send("service_ggacurv", "template_1de8ct5", {
-        name,
-        email,
-        phone,
-        service: selected,
-        message
-      }).then(() => {
-        alert("✅ Your selection was sent successfully!");
-      }).catch((err) => {
-        console.error("Error sending email:", err);
-        alert("⚠️ There was an error sending your selection.");
-      });
-    }
   });
 });
-
-
 
 // Booking Form en Home
 const bookingForm = document.getElementById("bookingForm");
@@ -188,57 +141,57 @@ if (bookingForm) {
   });
 }
 
-
-
-// Donation Form 
+// ✅ Donation Form simplificado
 const donationForm = document.getElementById("donationForm");
 if (donationForm) {
   donationForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const donorName = donationForm.donorName.value.trim();
-    const donorEmail = donationForm.donorEmail.value.trim();
     const donationAmount = donationForm.donationAmount.value.trim();
+    const paymentMethod = donationForm.paymentMethod.value;
     const donationMessage = document.getElementById("donationMessage");
 
-    if (!donorName || !donorEmail || !donationAmount) {
-      donationMessage.textContent = "⚠️ Please complete all fields.";
+    if (!donationAmount || donationAmount <= 0 || !paymentMethod) {
+      donationMessage.textContent = "⚠️ Please enter an amount and select a payment method.";
       donationMessage.style.color = "red";
       return;
     }
 
-    // Validación de email
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(donorEmail)) {
-      donationMessage.textContent = "⚠️ Invalid email address.";
-      donationMessage.style.color = "red";
-      return;
+    donationMessage.textContent = "Redirecting to payment gateway...";
+    donationMessage.style.color = "blue";
+
+    let redirectUrl = "";
+    if (paymentMethod === "paypal") {
+      redirectUrl = `https://www.paypal.com/donate?business=TU_CORREO_PAYPAL&amount=${donationAmount}&currency_code=EUR`;
+    } else if (paymentMethod === "aib") {
+      redirectUrl = `https://onlinebanking.aib.ie/inet/roi/login.htm`;
+    } else if (paymentMethod === "boi") {
+      redirectUrl = `https://www.365online.com/servlet/com.ibm.wps.portletbridgemvc.servlet.PortletBridgeServlet/login`;
+    } else if (paymentMethod === "revolut") {
+      redirectUrl = `https://revolut.me/TU_USUARIO/${donationAmount}`;
     }
+
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 1500);
   });
 }
-
-
-
-
 
 /* -------------------------------
    ANIMACIONES DEL HERO (HOME)
 ---------------------------------*/
 const hero = document.querySelector(".hero");
-const heroContent = document.querySelector(".hero *");
+if (hero) {
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    hero.style.backgroundPositionY = `${scrollY * 0.4}px`;
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-
-  // Parallax en el fondo
-  hero.style.backgroundPositionY = `${scrollY * 0.4}px`;
-
-  // Efecto fade y movimiento del contenido
-  hero.querySelectorAll("h1, p, .btn").forEach((el, i) => {
-    el.style.transform = `translateY(${scrollY * 0.2}px)`;
-    el.style.opacity = Math.max(1 - scrollY / 400, 0);
+    hero.querySelectorAll("h1, p, .btn").forEach((el, i) => {
+      el.style.transform = `translateY(${scrollY * 0.2}px)`;
+      el.style.opacity = Math.max(1 - scrollY / 400, 0);
+    });
   });
-});
-
+}
 
 // Additional Services dropdown - Enhanced
 const additionalServiceBtn = document.getElementById("additionalServiceBtn");
@@ -252,19 +205,15 @@ if (additionalServiceBtn) {
       return;
     }
 
-    // Insert selected service into contact form input
     const serviceInput = document.getElementById("service");
     serviceInput.value = selectedService;
 
-    // Scroll smoothly to Contact section
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   });
 }
-
-
 
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
@@ -275,16 +224,13 @@ if (menuToggle && navLinks) {
   });
 }
 
-
-
 // ✅ Gift Card Form
-const giftCardForm = document.getElementById("bookingFormGift"); // corregido el ID
+const giftCardForm = document.getElementById("bookingFormGift");
 
 if (giftCardForm) {
   giftCardForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Obtener los valores del formulario
     const recipientName = document.getElementById("giftName").value.trim();
     const recipientEmail = document.getElementById("giftEmail").value.trim();
     const giftPhone = document.getElementById("giftPhone").value.trim();
@@ -293,14 +239,12 @@ if (giftCardForm) {
     const giftMessage = document.getElementById("giftMessage").value.trim();
     const giftBookingMessage = document.getElementById("giftBookingMessage");
 
-    // Validar campos obligatorios
     if (!recipientName || !recipientEmail || !giftPhone || !giftService || !giftDate) {
       giftBookingMessage.textContent = "⚠️ Please complete all required fields.";
       giftBookingMessage.style.color = "red";
       return;
     }
 
-    // Enviar con EmailJS usando tu nuevo template
     emailjs.send("service_ggacurv", "template_8r0hsnp", {
       recipient_name: recipientName,
       recipient_email: recipientEmail,
@@ -310,7 +254,7 @@ if (giftCardForm) {
       message: giftMessage
     })
     .then(() => {
-      giftBookingMessage.textContent = `✅ ${recipientName},  ¡We will respond as soon as possible to schedule your gift card for a service!.`;
+      giftBookingMessage.textContent = `✅ ${recipientName}, we will respond as soon as possible to schedule your gift card service.`;
       giftBookingMessage.style.color = "green";
       giftCardForm.reset();
     })
@@ -322,8 +266,6 @@ if (giftCardForm) {
   });
 }
 
-
-
 // Seleccionar servicio desde tabla de Deep Cleaning
 const deepTableBtns = document.querySelectorAll(".select-service-btn");
 deepTableBtns.forEach(btn => {
@@ -331,54 +273,9 @@ deepTableBtns.forEach(btn => {
     const serviceInput = document.getElementById("service");
     serviceInput.value = btn.dataset.service;
 
-    // Scroll al formulario de contacto
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
-  });
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const donationForm = document.getElementById("donationForm");
-  const donationMessage = document.getElementById("donationMessage");
-
-  donationForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = donationForm.donorName.value.trim();
-    const email = donationForm.donorEmail.value.trim();
-    const amount = donationForm.donationAmount.value.trim();
-    const method = donationForm.paymentMethod.value; // nuevo campo select
-
-    if (!name || !email || !amount || amount <= 0 || !method) {
-      donationMessage.textContent = "⚠️ Please complete all fields.";
-      donationMessage.style.color = "red";
-      return;
-    }
-
-    donationMessage.textContent = "Redirecting to payment gateway...";
-    donationMessage.style.color = "blue";
-
-    // Simulación de redirección según método
-    let redirectUrl = "";
-
-    if (method === "paypal") {
-      redirectUrl = `https://www.paypal.com/donate?business=TU_CORREO_PAYPAL&amount=${amount}&currency_code=EUR`;
-    } else if (method === "aib") {
-      redirectUrl = `https://onlinebanking.aib.ie/inet/roi/login.htm`; // AIB login
-    } else if (method === "boi") {
-      redirectUrl = `https://www.365online.com/servlet/com.ibm.wps.portletbridgemvc.servlet.PortletBridgeServlet/login`; // Bank of Ireland login
-    } else if (method === "revolut") {
-      redirectUrl = `https://revolut.me/TU_USUARIO/${amount}`;
-    }
-
-    // Redirigir después de un pequeño delay
-    setTimeout(() => {
-      window.location.href = redirectUrl;
-    }, 1500);
   });
 });
